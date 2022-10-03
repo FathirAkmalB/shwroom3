@@ -1,3 +1,6 @@
+<?php 
+include "koneksi.php"; ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +22,7 @@
             </div> 
         </div>
         <div class="for">
-            <form action="" enctype="multipart/form-data">
+            <form action="" method="POST" enctype="multipart/form-data">
                 <div class="cont">
                     <label class="file" for="logo">
                         Logo Image
@@ -55,7 +58,7 @@
                     <div class="infle">
                         <label for="power">Max Torque</label>
                         <span>
-                            <input type="text" placeholder="XXX" name="torquee" id="">
+                            <input type="text" placeholder="XXX" name="torque" id="">
                             <label for="power">lb-ft</label>                       
                         </span>
                     </div>
@@ -83,7 +86,11 @@
                 $query = mysqli_query($koneksi, " INSERT INTO product VALUES('', '$judul', '$lgo_img', '$img', '$harga', '$power', '$top_speed', '$torquee', '$deskripsi', 'up')");
 
                 if($query){
-                    header("Location: admin-product.php");
+                    echo "
+                    <script>
+                    document.location = 'admin-event.php';
+                    </script>
+                    ";
                 }else{
                     header("Location: create.php?status='gagal'");
                 }

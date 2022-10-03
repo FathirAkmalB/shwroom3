@@ -13,13 +13,6 @@
 </head class="diam">
 <body class="diam">
     <div class="container">
-        <?php
-              function hello(){
-                  echo "Hello";
-              }
-        ?>
-        
-        <input type="button" name="Release" onclick="document.write('<?php hello() ?>');" value="Click to Release">
         <div class="sidebar">
             <div class="logo"><a href="">Accelleron</a></div>
             <div class="menu">

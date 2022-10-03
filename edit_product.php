@@ -52,7 +52,7 @@ if(mysqli_num_rows($tampil)<1){
                     <textarea placeholder="input here..." name="deskripsi" id=""><?= $data['deskripsi']?></textarea>
                 </div>
                 <!-- button -->
-                <input type="submit" name="kirim">
+                <input type="submit" name="kirim" onclick="return confirm('apakah anda yakin ingin mengubah data berikut?')">
                 <div class="fle">
                     <div class="infle">
                         <label for="power">Power</label>
@@ -116,9 +116,13 @@ if(mysqli_num_rows($tampil)<1){
                 
                 
                 if($query){
-                    header("Location: admin-product.php");
+                    echo "
+                    <script>
+                    document.location = 'admin-product.php';
+                    </script>
+                    ";
                 }else{
-                    // header("Location: edit_product.php?status='gagal'");
+                    header("Location: edit_product.php?status='gagal'");
                 }
                 var_dump($query);
                 die;

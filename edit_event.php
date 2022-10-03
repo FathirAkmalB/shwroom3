@@ -45,7 +45,7 @@ if(mysqli_num_rows($query)<1){
                     <textarea placeholder="input here..." name="deskripsi" id=""><?=$data['deskripsi']?></textarea>
                 </div>
                 <!-- button -->
-                <input type="submit" name="kirim">                 
+                <input type="submit" name="kirim" onclick="return confirm('apakah anda yakin ingin mengubah data berikut?')">                 
                 </div>
             </form>
 
