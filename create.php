@@ -88,7 +88,7 @@ include "koneksi.php"; ?>
                 if($query){
                     echo "
                     <script>
-                    document.location = 'admin-event.php';
+                    document.location = 'admin-product.php';
                     </script>
                     ";
                 }else{
